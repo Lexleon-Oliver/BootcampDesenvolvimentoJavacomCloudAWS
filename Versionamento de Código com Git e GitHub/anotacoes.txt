@@ -1,0 +1,23 @@
+#Configurando nome e email
+    git config --global user.name "SeuNome"
+    git config --global user.email "SeuEmail"
+
+#Consultando nome e email
+    git config user.name
+    git config user.email
+
+#Alterando o nome inicial da branch padrao
+    git config --global init.defaultBranch main
+
+#Salvando token para acesso ao Github
+    git config --global credential.helper store
+
+#Gerar chave ssh para acesso ao Github
+    ssh-keygen -t ed25519 -C "Comentarios de uso ou proprietario"
+
+#Iniciar o ssh agent
+   eval "$(ssh-agent -s)"
+
+#Adicionar chave ssh privada ao ssh agent
+    ssh-add CaminhoDaChave
+
