@@ -21,3 +21,31 @@
 #Adicionar chave ssh privada ao ssh agent
     ssh-add CaminhoDaChave
 
+#Restaurar conteudo
+    git restore NomeArquivo (descarta todas as alterações local realizadas no arquivo)
+
+#Alterar a mensagem do ultimo commit
+    git commit --amend -m "NovaMensagem"
+
+#Historico mais detalhado
+    git reflog
+
+DESFAZENDO COMMITS
+(Alterações devem ser feitas antes de enviar para o remoto)
+Git Reset:
+    * Soft (seleciona os alterações posteriores ao commit selecionado e os coloca na area de preparação)
+        git reset --soft hashDoCommit
+
+    * Mixed (Comportamento padrão do git reset- seleciona os arquivos posteriores ao commit selecionado e os coloca na area de arquivos nao rastreados)
+        git reset --mixed hashDoCommit ou git reset hashDoCommit
+
+    * Hard (seleciona os arquivos posteriores ao commit selecionado e os deleta)
+        git reset --hard hashDoCommit
+
+#remover arquivos adicionados a area de preparação
+    git reset NomeDoArquivoParaRemover ou git restore --staged NomeDoArquivoParaRemover
+
+BRANCHES
+#Clonando apenas uma branch
+    git clone LinkRepositorio --branch NomeDaBranch --single-branch
+
