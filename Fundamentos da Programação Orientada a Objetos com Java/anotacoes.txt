@@ -1,0 +1,52 @@
+//Enums
+
+public enum EstadoBrasileiro{
+    SAO_PAULO ("SP", "São Paulo"),
+    RIO_JANEIRO ("RJ", "Rio de Janeiro"),
+    PIAUI ("PI", "Piauí"),
+    MARANHAO ("MA", "Maranhão"),
+    CEARA ("CE", "Ceará");
+
+    private String nome;
+    private String sigla;
+    private EstadoBrasileiro(String sigla, String nome) {
+        this.nome = nome;
+        this.sigla = sigla;
+    }
+
+    public String getSigla() {
+        return sigla;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public String getNomeMaiusculo() {
+        return nome.toUpperCase();
+    }
+}
+
+
+//UML
+
+AGREGAÇÃO: Em uma agregação, a classe principal contem uma relação com outra classe mas ela pode existir sem a classe
+agregadora. Imagine em um cadastro de candidatos, podemos encontrar candidatos que ainda não possuam uma profissão.
+
+COMPOSIÇÃO: A composição caracteriza uma dependencia existencial entre a classe principal e a classe associada.
+Imaginamos que uma Admissão so poderá existir contendo suas informações básicas e a composição do candidato selecionado.
+
+MULTIPLICIDADE:  Nem sempre o relacionamento entre as classes será de um para um, um determinado cenário poderá exigir
+multiplicidades especificas conforme opções abaixo:
+
+-1. -> Representa uma associação contendo um elemento.
+-*. -> Representa uma associação contendo uma lista de elementos.
+-0..1 -> Representa uma associação contendo zero ou um elemento.
+-0..* -> Representa uma associação contendo zero ou uma lista de elementos.
+
+
+Visibilidade:
+
+- (+) Visibilidade pública
+- (#) Visibilidade protegida (muito associada à herança)
+- (-) Visibilidade privada
