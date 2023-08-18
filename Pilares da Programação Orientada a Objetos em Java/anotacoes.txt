@@ -1,0 +1,57 @@
+Quatro pilares da orientação a objeto:
+
+* Encapsulamento: Nem tudo precisa estar visivel.
+
+* Herança: Caracteristicas e compartamentos comuns elevados e compartilhados atraves de uma hierarquia de objetos.
+
+* Abstração: É a indisponibilidade para determinar a logica de um ou varios compartamentos em um objeto.
+
+* Polimorfismo: São inumeras maneiras de realizar uma mesma ação.
+
+Interfaces:
+
+Uma interface em Java é um contrato que define um conjunto de métodos que uma classe deve implementar. Ela permite a
+especificação de um conjunto de ações que uma classe deve ser capaz de realizar, independentemente de sua implementação
+concreta. As interfaces fornecem um meio de alcançar abstração e permitir a criação de classes que compartilham
+funcionalidades comuns, sem herança direta.
+
+Imagine que estamos desenvolvendo um sistema para equipamentos de escritório. Podemos criar três interfaces diferentes:
+Impressora, Scanner e Copiadora, cada uma com um conjunto de métodos que define as operações específicas que esses
+dispositivos podem realizar.
+
+Exemplos de métodos em cada interface:
+
+    Impressora: imprimirDocumento(String documento)
+    Scanner: digitalizarDocumento()
+    Copiadora: copiarDocumento()
+
+Para contornar a limitação de herança múltipla em Java, podemos usar interfaces. No exemplo do equipamento
+multifuncional, podemos criar uma classe EquipamentoMultifuncional que implementa as interfaces Impressora, Scanner e
+Copiadora. Dessa forma, a classe EquipamentoMultifuncional herda as ações definidas por todas as três interfaces.
+
+interface Impressora {
+    void imprimirDocumento();
+}
+
+interface Scanner {
+    void digitalizarDocumento();
+}
+
+interface Copiadora {
+    void copiarDocumento();
+}
+
+class EquipamentoMultifuncional implements Impressora, Scanner, Copiadora {
+
+    public void imprimirDocumento() {
+        System.out.println("Imprimindo documento do equipamento multifuncional");
+    }
+
+    public void digitalizarDocumento() {
+        System.out.println("Digitalizando documento do equipamento multifuncional");
+    }
+
+    public void copiarDocumento() {
+        System.out.println("Copiando documento do equipamento multifuncional");
+    }
+}
